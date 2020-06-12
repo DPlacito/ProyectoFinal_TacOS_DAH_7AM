@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTacOSFinal.Views.CedisAlm.FicViCedisAlmList"
+             Title="Lista De Cedis">
+
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content  ControlTemplate="{StaticResource PageWithGradient}">
+        <ScrollView>
+            <Grid
+            Padding="10"
+            ColumnSpacing="5"
+            RowSpacing="5"
+            HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout
+                Grid.Row="0"
+                Grid.ColumnSpan="8"
+                >
+                    <Label TextColor="Black">IdCedi</Label>
+                    <Entry Placeholder="Ingresar el id del cedi" x:Name="IngresarCediEntry"></Entry>
+                    <Button Text="Buscar" TextColor="Black" Clicked="Button_Clicked" x:Name="BotonIngresar"></Button>
+
+                    <Button Text="Agregar" TextColor="Black" Command="{Binding FicMetAddCommand}" x:Name="BotonAgregar"></Button>
+
+                    <SearchBar Placeholder="Buscar" SearchButtonPressed="FicSearchButtonPressed" x:Name="FicSearchBar"/>
+
+
+                </StackLayout>
+
+                <syncfusion:SfDataGrid Grid.Row="1" Grid.ColumnSpan="8"
+                ColumnSizer="Star"
+                AutoGenerateColumns="False"
+                AllowSorting="False"
+                ItemsSource="{Binding SfDataGrid_ItemSource_Cedis}"
+                SelectedItem="{Binding SfDataGrid_SelectItem_Cedis, Mode=TwoWay}"
+                SelectionMode="Single"
+                x:Name="dataGrid">
+                    <syncfusion:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
+                        <syncfusion:GridTextColumn MappingName="IdCedi" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="IdCedi"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="DesCedi" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="DesCedi"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="FechaReg" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="FechaReg"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="FechaUltMod" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="FechaUltMod"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="UsuarioReg" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="UsuarioReg"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="UsuarioMod" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="UsuarioMod"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="Activo" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="Activo"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+
+                        <syncfusion:GridTextColumn MappingName="Borrado" Padding="2">
+                            <syncfusion:GridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <Label Text="Borrado"
+                                           FontAttributes="Bold"
+                                           TextColor="White"
+                                           BackgroundColor="Black"
+                                           YAlign="Center"
+                                           XAlign="Center"
+                                     />
+                                </DataTemplate>
+                            </syncfusion:GridTextColumn.HeaderTemplate>
+                        </syncfusion:GridTextColumn>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

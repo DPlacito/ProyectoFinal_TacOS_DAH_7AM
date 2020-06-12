@@ -1,0 +1,1 @@
+<network-security-config><domain-config cleartextTrafficPermitted="true"><domain includeSubdomains="true">http://10.0.0.2:55949/api/inventarios/sku_lista</domain><!-- Debug port --></domain-config></network-security-config>

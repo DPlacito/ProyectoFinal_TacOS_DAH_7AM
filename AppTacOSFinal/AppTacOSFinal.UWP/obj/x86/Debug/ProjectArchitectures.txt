@@ -1,0 +1,1 @@
+C:\Users\artur\Desktop\AppTacOSFinal\AppTacOSFinal\AppTacOSFinal.UWP\AppTacOSFinal.UWP.csproj;x86

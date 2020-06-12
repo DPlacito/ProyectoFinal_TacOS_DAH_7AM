@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:magicGradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+             mc:Ignorable="d"
+             x:Class="AppTacOSFinal.App">
+    <Application.Resources>
+
+        <ControlTemplate x:Key="PageWithGradient">
+            <Grid>
+                <magicGradients:GradientView VerticalOptions="FillAndExpand" >
+                    <magicGradients:GradientView.GradientSource>
+                        <magicGradients:CssGradientSource>
+                            <x:String>
+
+                            </x:String>
+                        </magicGradients:CssGradientSource>
+                    </magicGradients:GradientView.GradientSource>
+                </magicGradients:GradientView>
+                <ContentPresenter />
+            </Grid>
+        </ControlTemplate>
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="ControlTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <magicGradients:GradientView VerticalOptions="FillAndExpand" >
+                                <magicGradients:GradientView.GradientSource>
+                                    <magicGradients:CssGradientSource>
+                                        <x:String>
+                                            <![CDATA[
+            linear-gradient(450deg, rgb(37, 163, 10),rgb(138, 191, 54),rgb(239, 219, 97))
+                ]]>
+
+                                        </x:String>
+                                    </magicGradients:CssGradientSource>
+                                </magicGradients:GradientView.GradientSource>
+                            </magicGradients:GradientView>
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

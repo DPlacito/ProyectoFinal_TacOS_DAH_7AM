@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppTacOSFinal.Views.Navegacion.FicMasterPage"
+             xmlns:pages="clr-namespace:AppTacOSFinal.Views.CedisAlm;assembly=AppTacOSFinal"
+                  xmlns:pages1="clr-namespace:AppTacOSFinal.Views.Navegacion">
+    <MasterDetailPage.Master>
+        <pages1:FicMasterPageMaster x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:FicViCedisAlmList />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
